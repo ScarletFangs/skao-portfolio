@@ -1,0 +1,73 @@
+body
+{
+  background-color: #050505;
+  font-family: "Inter", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  color: #999999;
+  margin: 0px;
+}
+
+h1
+{
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3rem;
+  color: #E6E6E6;
+}
+
+h2
+{
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #E6E6E6;
+}
+
+h3
+{
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.125rem;
+  color: #E6E6E6;
+}
+
+h4
+{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.375rem;
+  color: #000000;
+}
+
+h5
+{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.125rem;
+  color: #000000;
+}
+
+h6
+{
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+  color: #050505;
+}
+
+p
+{
+  font-family: "Inter", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  color: #999999;
+}
