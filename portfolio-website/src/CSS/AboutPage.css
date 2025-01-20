@@ -1,0 +1,26 @@
+.About-Container
+{
+    margin: 3%;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.About-EduContainer
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    gap: 24px;
+    /* padding-top: 48px;
+    padding-bottom: 48px; */
+}
+
+.About-EduGrouping
+{
+    padding-left: 20px;
+}

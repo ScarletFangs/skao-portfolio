@@ -3,15 +3,59 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* background-color: blue; */
 }
 
 .ProjectCards-Large
 {
-    width: 20rem;
-    border-radius: 12px;
+    display:inline-block;
+    position: relative;
+    width: 30rem;
+    height: auto;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    gap: 24px;
+
+    text-decoration: none;
 }
 
-.
+.ProjectCards-Large img
+{
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 1rem;
+}
 
+.ProjectCards-Large:hover img
+{
+    transform: scale(1.2);
+}
+
+.ProjectCards-Large:hover .ProjectCard-Description
+{
+    transform: translateX(15px);
+}
+.ProjectCard-Description
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5%;
+    gap: 6px;
+    transition: transform 0.3s ease;
+}
+
+.ProjectCard-Description svg
+{
+    margin-right: 7%;
+}
+
+.ProjectCard-Type
+{
+    color:#4CE6A6;
+    text-transform: uppercase;
+    font-size: 12px;
+}

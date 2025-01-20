@@ -13,6 +13,7 @@
 
     display: flex;
     flex-direction: column;
+    gap: 50px;
 }
 
 .Hero-Container p
@@ -20,3 +21,32 @@
     margin: 0;
 }
 
+.Hero-ProjectCards
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: row;
+}
+
+@media ((min-width: 1200px))
+{
+
+}
+
+@media ((min-width: 810px) and (max-width: 1199px))
+{
+
+}
+
+@media (max-width: 810px)
+{
+    .Hero-ProjectCards
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

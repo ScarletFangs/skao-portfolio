@@ -1,29 +1,28 @@
-import MediaQuery, { useMediaQuery } from 'react-responsive'
-import NavBar from '../src/components/NavBar.jsx'
-import Hero from '../src/components/Hero.jsx'
+import {
+  Route, 
+  createBrowserRouter, 
+  createRoutesFromElements,
+  RouterProvider
+} from 'react-router-dom'
+import MainLayout from './layouts/MainLayout.jsx'
+import HomePage from './Pages/HomePage.jsx'
+import AboutPage from './Pages/AboutPage.jsx'
+import ProjectPage from './Pages/ProjectsPage.jsx'
+import DawnCorePage from './Pages/DawnCorePage.jsx'
 
-
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<MainLayout/>}>
+      <Route index element={<HomePage/>}/>
+      <Route path='/about' element={<AboutPage/>}/>
+      <Route path='/projects' element={<ProjectPage/>}/>
+      <Route path='/DawnCore' element={<DawnCorePage/>}/>
+    </Route>
+  )
+)
 
 function App() {
-  const isDesktop = useMediaQuery({query: '(min-width: 1200px'})
-  const isTablet = useMediaQuery({query: '(min-width: 810px) and (max-width: 1199px)'})
-  const isPhone = useMediaQuery({query: '(max-width: 810px'})
-  return (
-    <>
-      {!isPhone && <NavBar/>}
-      {/* <NavBar/> */}
-
-      {/* Content */}
-      <div style={{display: "flex"}}>
-        {!isPhone && (
-          //for not phone devices 
-          <div style={{
-            width: "20vw", minWidth: "200px"}}></div> 
-        )}
-        <Hero />
-      </div>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App

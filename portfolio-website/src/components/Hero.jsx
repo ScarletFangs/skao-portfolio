@@ -1,25 +1,36 @@
 import React from 'react'
-import tempProjImg from '../assets/ProjectImages/HeadHunted/background.jpg'
+import ProjectCard from './ProjectCard'
+import PageTopInfo from './PageTopInfo'
+import HeadHuntedPhoto from '../assets/ProjectImages/HeadHunted/headhunted.jpg' 
+import QuickshotPhoto from '../assets/ProjectImages/Quickshot/quickshot.png'
 
 const Hero = () => {
   return (
     <>
         <div className="Hero-Container">
-          <h1>
-            Hello Everyone! I'm Sirena.
-          </h1>
-          <p>
-            A passionate game engineer who loves to dive into how mechanics work behind the scenes. 
-          </p>
-        </div>
+          <PageTopInfo
+            pageTitle="Hello Everyone! I'm Sirena."
+            pageDescription= "A passionate game engineer who loves to dive into how mechanics work behind the scenes."
+          />
+          <div className="Hero-ProjectCards">
+            {/* Project 1 */}
+            <ProjectCard
+              imgSrc={HeadHuntedPhoto}
+              projectType="Virtual Reality"
+              projectTitle="HeadHunted"
+              pageLink="https://phosphoricons.com/?q=%22arrow%22"
+            />
 
-        <a className="ProjectCards-Large">
-          <img src={tempProjImg} alt="Project Image"/>
-          <div className="ProjectCard-Description">
-            <p className="ProjectCard-Type">Virtual Reality</p>
-            <h3 className="ProjectCard-Title">HeadHunted</h3>
+            {/* Project 2 */}
+
+            <ProjectCard
+              imgSrc={QuickshotPhoto}
+              projectType="First Person Shooter"
+              projectTitle="Quickshot"
+              pageLink="https://phosphoricons.com/?q=%22arrow%22"
+            />
           </div>
-        </a>
+        </div>
     </>
   )
 }

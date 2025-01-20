@@ -1,5 +1,6 @@
 import React from 'react'
 import NavIcons from '../images.js'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
 
@@ -21,12 +22,12 @@ const NavBar = () => {
             {/* Navigation Buttons div */}
             <div>
                 {NavLinks.map((item, index) => (
-                    <a href={item[2]} className="navbar-links-container" key={index}>
+                    <Link to={item[2]} className="navbar-links-container" key={index}>
                         <div className="navbar-links">
                             <img className="navbar-icons" src={item[1]} alt={`${item[0]} Icon`}/>
-                            <div className="navbar-label">{item[0]}</div>
+                            <h3 className="navbar-label">{item[0]}</h3>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>
