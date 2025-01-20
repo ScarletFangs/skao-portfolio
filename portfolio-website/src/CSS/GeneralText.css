@@ -6,7 +6,7 @@ body
   font-style: normal;
   font-size: 16px;
   color: #999999;
-  margin: 0px;
+  /* margin: 0px; */
 }
 
 h1
@@ -56,11 +56,15 @@ h5
 
 h6
 {
+  /* mini heading */
   font-family: "Inter", serif;
-  font-weight: 600;
-  font-style: normal;
+  font-weight: 400;
+  font-style: italic;
   font-size: 1rem;
-  color: #050505;
+  color: #999999;
+
+  /* display: block; */
+  /* margin-block-start: 2.33rem; */
 }
 
 p

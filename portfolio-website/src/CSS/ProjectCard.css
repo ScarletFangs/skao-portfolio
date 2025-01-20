@@ -10,7 +10,7 @@
 {
     display:inline-block;
     position: relative;
-    width: 30rem;
+    width: clamp(300px, 35vw, 800px);
     height: auto;
     border-radius: 1rem;
     display: flex;
@@ -55,7 +55,7 @@
 
 .ProjectCard-Type
 {
-    color:#4CE6A6;
+    color: #999999;
     text-transform: uppercase;
     font-size: 12px;
 }

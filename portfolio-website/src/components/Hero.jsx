@@ -18,7 +18,7 @@ const Hero = () => {
               imgSrc={HeadHuntedPhoto}
               projectType="Virtual Reality"
               projectTitle="HeadHunted"
-              pageLink="https://phosphoricons.com/?q=%22arrow%22"
+              pageLink="/HeadHunted"
             />
 
             {/* Project 2 */}

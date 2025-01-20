@@ -9,6 +9,7 @@ import HomePage from './Pages/HomePage.jsx'
 import AboutPage from './Pages/AboutPage.jsx'
 import ProjectPage from './Pages/ProjectsPage.jsx'
 import DawnCorePage from './Pages/DawnCorePage.jsx'
+import HeadHuntedPage from './Pages/HeadHunted.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path='/about' element={<AboutPage/>}/>
       <Route path='/projects' element={<ProjectPage/>}/>
       <Route path='/DawnCore' element={<DawnCorePage/>}/>
+      <Route path='/HeadHunted' element={<HeadHuntedPage/>}/>
     </Route>
   )
 )
