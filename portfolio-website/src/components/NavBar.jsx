@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState } from 'react'
 import NavIcons from '../images.js'
 import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
 
@@ -9,28 +10,58 @@ const NavBar = () => {
         ["About", NavIcons["ProfileIcon"], "/about"], 
         ["Projects", NavIcons["ProjectIcon"], "/projects"]
     ];
+
+    const [menuOpen, setMenuOpen] = useState(false);
      
     return (
     <>
         <div className="navbar-container"> 
-            
             {/* Self Picture div */}
             <div className="navbar-TopCluster">
-                <img src={NavIcons["SelfPic"]}/>
+                <Link to="/">  {/* to return people to home*/}
+                    <img src={NavIcons["SelfPic"]}/>
+                </Link>
 
                 {/* Navigation Buttons div */}
                 <div className="navbar-links-container">
                     {NavLinks.map((item, index) => (
-                        <Link to={item[2]} className="navbar-links-grouping" key={index}>
+                        <NavLink to={item[2]} className="navbar-links-grouping" key={index}>
                             <div className="navbar-links">
                                 <img className="navbar-icons" src={item[1]} alt={`${item[0]} Icon`} style={{width:'16px'}}/>
                                 <h3 className="navbar-label">{item[0]}</h3>
                             </div>
-                        </Link>
+                        </NavLink>
                     ))}
                 </div>
             </div>
         </div>
+
+        <div className="top-navbar-container">
+            <div className="top-navbar-container-group">
+                {/* Self picture div */}
+                <Link to="/">
+                    <img src={NavIcons["SelfPic"]}/>
+                </Link>
+                
+                <Link onClick={() => { setMenuOpen(!menuOpen);}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#f7f2f3" viewBox="0 0 256 256">
+                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+                    </svg>
+                </Link>
+            </div>
+
+            {/* Top bar style navigation */}
+            <div className={menuOpen ? "" : "open"}>
+                {NavLinks.map((item, index) => (
+                    <NavLink to={item[2]} className="navbar-links-grouping" key={index}>
+                        <div className="navbar-links">
+                            <h3 className="navbar-label">{item[0]}</h3>
+                        </div>
+                    </NavLink>
+                ))}
+            </div>
+        </div> 
+
       </>
     )
 }

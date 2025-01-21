@@ -1,3 +1,8 @@
+.active
+{
+    background-color: #1A1A1A;
+}
+
 .navbar-container
 {
     box-sizing: border-box;
@@ -41,13 +46,14 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    background-color: red;
+    /* background-color: red; */
+    gap: 6px;
 }
 
-.nav-links-grouping
+.navbar-links-grouping
 {
     display: flex;
-    padding: 12px;
+    text-decoration: none;
 }
 
 .navbar-links
@@ -55,12 +61,11 @@
   display: flex;
   box-sizing: border-box;
   background-color: #050505;
+  width: 100%;
   
-  padding: 0 1rem;
+  padding: 6px;
   border-radius: 5px;
   justify-content: start;
-  margin-top: 5%;
-  margin-bottom: 5%;
   align-items: center; 
   text-decoration: none;
 }
@@ -89,3 +94,100 @@
     width: clamp(32px, 1vw, 64px);
 }
 
+.top-navbar-container
+{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #050505;
+    border-bottom: 2px #505050 solid;
+    padding: 24px;
+    z-index: 9999;
+    height: 5%;
+    width: 100%;
+}
+
+.top-navbar-container-group
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.open
+{
+    display: none;
+    gap: 6px;
+}
+
+.top-navbar-container a
+{
+    display: flex;
+    line-height: 0;
+    text-decoration: none;
+    align-items: center;
+
+}
+.top-navbar-container img
+{
+    width: 48px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: contain; 
+    margin: auto;
+}
+
+.top-navbar-links-container
+{
+    display:flex;
+    height: fit-content;
+    align-items: center;
+}
+
+.top-navbar-links-container a 
+{
+    display: flex;
+    /* height: fit-content; */
+    align-items: center;
+    justify-content: center;
+}
+
+.top-navbar-links-container Link
+{
+    align-items: center;
+}
+
+.open
+{
+    position: sticky;
+}
+
+@media ((min-width: 811px))
+{
+    .navbar-container
+    {
+        display: flex;
+    }
+
+    .top-navbar-container
+    {
+        display: none;
+        position: none;
+        top: 0;
+    }
+}
+
+@media (max-width: 810px)
+{
+    .navbar-container
+    {
+        display: none;
+    }
+
+    .top-navbar-container
+    {
+        position: sticky;
+        top: 0;
+    }
+}

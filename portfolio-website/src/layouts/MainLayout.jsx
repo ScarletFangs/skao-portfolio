@@ -9,14 +9,18 @@ const MainLayout = () => {
 
   return (
     <>
-      <div style={{display: "flex"}}>
-        {!isPhone && <NavBar/>}
+      <div style={{
+        display: "flex",
+        flexDirection: isPhone ? "column" : "row"
+        }}>
+        <NavBar/>
+        {/* {!isPhone && <NavBar/>} */}
         {!isPhone && (
-            //for not phone devices 
-            // <div style={{flexShrink:"0",
-            // width: "20vw", backgroundColor: "red"}}></div> 
-            <div style={{flexShrink:"0",
-              width: "288px", backgroundColor: "red"}}></div> 
+            <div style={{
+              flexShrink:"0",
+              width: "288px", 
+              backgroundColor: "red"
+            }}></div> 
         )}
       <Outlet />
       </div>
