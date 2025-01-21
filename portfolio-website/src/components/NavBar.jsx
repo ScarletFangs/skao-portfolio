@@ -15,20 +15,20 @@ const NavBar = () => {
         <div className="navbar-container"> 
             
             {/* Self Picture div */}
-            <div className="navbar-selfpic">
-            <img src={NavIcons["SelfPic"]}/>
-            </div>
+            <div className="navbar-TopCluster">
+                <img src={NavIcons["SelfPic"]}/>
 
-            {/* Navigation Buttons div */}
-            <div>
-                {NavLinks.map((item, index) => (
-                    <Link to={item[2]} className="navbar-links-container" key={index}>
-                        <div className="navbar-links">
-                            <img className="navbar-icons" src={item[1]} alt={`${item[0]} Icon`}/>
-                            <h3 className="navbar-label">{item[0]}</h3>
-                        </div>
-                    </Link>
-                ))}
+                {/* Navigation Buttons div */}
+                <div className="navbar-links-container">
+                    {NavLinks.map((item, index) => (
+                        <Link to={item[2]} className="navbar-links-grouping" key={index}>
+                            <div className="navbar-links">
+                                <img className="navbar-icons" src={item[1]} alt={`${item[0]} Icon`} style={{width:'16px'}}/>
+                                <h3 className="navbar-label">{item[0]}</h3>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
       </>

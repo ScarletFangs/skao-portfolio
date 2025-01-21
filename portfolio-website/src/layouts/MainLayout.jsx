@@ -13,8 +13,10 @@ const MainLayout = () => {
         {!isPhone && <NavBar/>}
         {!isPhone && (
             //for not phone devices 
+            // <div style={{flexShrink:"0",
+            // width: "20vw", backgroundColor: "red"}}></div> 
             <div style={{flexShrink:"0",
-            width: "20vw", backgroundColor: "red"}}></div> 
+              width: "288px", backgroundColor: "red"}}></div> 
         )}
       <Outlet />
       </div>
