@@ -5,7 +5,7 @@ import HeadHuntedPhoto from '../assets/ProjectImages/HeadHunted/headhunted.jpg'
 import QuickshotPhoto from '../assets/ProjectImages/Quickshot/quickshot.png'
 
 const HomePage = () => {
-
+  
   return (
     <>
       <div className="Home-Container">
@@ -29,8 +29,8 @@ const HomePage = () => {
             imgSrc={QuickshotPhoto}
             projectType="First Person Shooter"
             projectTitle="Quickshot"
-            pageLink="https://phosphoricons.com/?q=%22arrow%22"
-          />
+            pageLink="/QuickShot"
+            />
         </div>
       </div>
     </>

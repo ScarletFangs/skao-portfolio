@@ -2,7 +2,7 @@ import React from 'react'
 
 const PageTopInfo = ({pageTitle, pageDescription, showLocation}) => {
   return (
-    <div className="TopInfo-Container">
+    <header className="TopInfo-Container">
       <div className="TopInfo-TitleDescrip">
         <h1>
           {pageTitle}
@@ -11,6 +11,7 @@ const PageTopInfo = ({pageTitle, pageDescription, showLocation}) => {
         {pageDescription && <p style={{paddingTop:'48px'}}>{pageDescription}</p>}
       </div>
 
+    {/* Divider for header */}
       <div className="TopInfo-LocationDivider">
         {showLocation ?  (
           <>
@@ -26,7 +27,7 @@ const PageTopInfo = ({pageTitle, pageDescription, showLocation}) => {
           null
         )}
       </div>
-    </div>
+    </header>
   )
 }
 

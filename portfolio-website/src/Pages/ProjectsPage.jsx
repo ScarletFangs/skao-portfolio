@@ -29,7 +29,7 @@ const ProjectsPage = () => {
               imgSrc={QuickshotPhoto}
               projectType="First Person Shooter"
               projectTitle="Quickshot"
-              pageLink="https://phosphoricons.com/?q=%22arrow%22"
+              pageLink="/QuickShot"
             />
 
             {/* Project 3 */}

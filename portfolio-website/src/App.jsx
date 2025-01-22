@@ -10,6 +10,7 @@ import AboutPage from './Pages/AboutPage.jsx'
 import ProjectPage from './Pages/ProjectsPage.jsx'
 import DawnCorePage from './Pages/DawnCorePage.jsx'
 import HeadHuntedPage from './Pages/HeadHunted.jsx'
+import QuickShotPage from './Pages/QuickShotPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path='/projects' element={<ProjectPage/>}/>
       <Route path='/DawnCore' element={<DawnCorePage/>}/>
       <Route path='/HeadHunted' element={<HeadHuntedPage/>}/>
+      <Route path='/QuickShot' element={<QuickShotPage/>}/>      
     </Route>
   )
 )
