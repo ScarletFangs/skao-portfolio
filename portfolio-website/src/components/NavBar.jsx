@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
 
+    // Scalable navigation vertical bar 
     const NavLinks = [
         ["Home", NavIcons["HomeIcon"], "/"],
         ["About", NavIcons["ProfileIcon"], "/about"], 
@@ -20,7 +21,7 @@ const NavBar = () => {
             {/* Self Picture div */}
             <nav className="navbar-TopCluster">
                 <Link to="/">  {/* to return people to home*/}
-                    <img src={NavIcons["SelfPic"]}/>
+                    <img src={NavIcons["SelfPic"]} alt="Picture of Sirena Kao"/>
                 </Link>
 
                 {/* Navigation Buttons div */}
@@ -42,10 +43,10 @@ const NavBar = () => {
             <nav className="top-navbar-container-group">
                 {/* Self picture div */}
                 <Link to="/">
-                    <img src={NavIcons["SelfPic"]}/>
+                    <img src={NavIcons["SelfPic"]} alt="Picture of Sirena Kao"/>
                 </Link>
                 
-                <Link to={null} onClick={() => { setMenuOpen(!menuOpen);}}>
+                <Link to={null} onClick={() => { setMenuOpen(!menuOpen);}} aria-label="Menu Icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#f7f2f3" viewBox="0 0 256 256">
                         <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
                     </svg>

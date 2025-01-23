@@ -1,11 +1,22 @@
+:root
+{
+  --Dark2: #050505;
+  --Dark10: #1A1A1A;
+  --Light60: #999999;
+  --Light90: #E6E6E6;
+  --Green60: #4CE6A6;
+  --Green10: #062D1D;
+  --Red70: #EC7979;
+}
+
 body
 {
-  background-color: #050505;
+  background-color: var(--Dark2);
   font-family: "Inter", serif;
   font-weight: 300;
   font-style: normal;
   font-size: 16px;
-  color: #999999;
+  color: var(--Light60);
   /* margin: 0px; */
 }
 
@@ -15,7 +26,7 @@ h1
   font-weight: 500;
   font-style: normal;
   font-size: 3rem;
-  color: #E6E6E6;
+  color: var(--Light90);
 }
 
 h2
@@ -24,7 +35,7 @@ h2
   font-weight: 500;
   font-style: normal;
   font-size: 1.5rem;
-  color: #E6E6E6;
+  color: var(--Light90);
 }
 
 h3
@@ -33,7 +44,7 @@ h3
   font-weight: 500;
   font-style: normal;
   font-size: 1.125rem;
-  color: #E6E6E6;
+  color: var(--Light90);
 }
 
 h4
@@ -42,7 +53,7 @@ h4
   font-weight: 700;
   font-style: normal;
   font-size: 1.375rem;
-  color: #000000;
+  color: black;
 }
 
 h5
@@ -51,7 +62,7 @@ h5
   font-weight: 700;
   font-style: normal;
   font-size: 1.125rem;
-  color: #000000;
+  color: black;
 }
 
 h6
@@ -61,10 +72,7 @@ h6
   font-weight: 400;
   font-style: italic;
   font-size: 1rem;
-  color: #999999;
-
-  /* display: block; */
-  /* margin-block-start: 2.33rem; */
+  color: var(--Light60);
 }
 
 p
@@ -73,5 +81,5 @@ p
   font-weight: 300;
   font-style: normal;
   font-size: 1rem;
-  color: #999999;
+  color: var(--Light60);
 }

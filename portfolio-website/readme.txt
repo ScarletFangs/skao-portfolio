@@ -66,8 +66,10 @@ I talked to Josh Castillo on how to make the side vertical navigation bar stay c
 
 
 6. Is there anything special we need to know in order to run your code?
-This was made with React. In order to run this website locally download Node.js from this link: https://nodejs.org/en .
-Then open command prompt on the computer and cd to the location of this file. The folder should be called "portfolio-website" and inside should contain the readme file. 
-Afterwards, type in the command "npm run dev" to run the website locally, vite should show up with the link "https://localhost:3000/" and other information. 
-Now type in "o" and enter to open the link in the browser. 
+- This was made with React. In order to run this website locally download Node.js from this link: https://nodejs.org/en .
+- Then open command prompt on the computer and type in "cd [file path]"to the location of this file. The folder should be called "a1-portfolio-kaoss" and inside should contain the readme file. 
+- Afterwards, type in the command "npm run dev" to run the website locally, vite should show up with the link "https://localhost:3000/" and other information. 
+- Now type in "o" and enter to open the link in the browser. 
+
+PageHTML Folder contains the generated html code found in the inspector of the browser when running the website locally. 
 
