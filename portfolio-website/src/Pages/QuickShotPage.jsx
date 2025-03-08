@@ -3,7 +3,7 @@ import PageTopInfo from '../components/PageTopInfo'
 import { Link } from 'react-router-dom'
 import QSPhoto1 from '../assets/ProjectImages/Quickshot/quickshot.png'
 import QSPhoto2 from '../assets/ProjectImages/Quickshot/quickshot2.png'
-import QSVideo from '../assets/ProjectImages/Quickshot/quickshotvid.mp4'
+import QSVideo from '../assets/ProjectImages/Quickshot/QSDemo.mp4'
 
 
 const QuickShotPage = () => {
@@ -34,7 +34,7 @@ const QuickShotPage = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4CE6A6" viewBox="0 0 256 256">
                     <path d="M208,144H136V95.19a40,40,0,1,0-16,0V144H48a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V160A16,16,0,0,0,208,144ZM104,56a24,24,0,1,1,24,24A24,24,0,0,1,104,56ZM208,208H48V160H208v48Zm-40-96h32a8,8,0,0,1,0,16H168a8,8,0,0,1,0-16Z"></path>
                 </svg>
-                <p>First Person Shooter</p>
+                <p>Multiplayer First Person Shooter</p>
             </div>
         </div>
 
@@ -58,8 +58,27 @@ const QuickShotPage = () => {
             <img src={QSPhoto2}/>
         </div>
 
-        <div className="QSVideo">
-            <video controls width="100%">
+        <Link to="https://dtrmgiraffe.itch.io/quickshot" target="_blank" className="HeadHunted-LinkBtn">
+            <p>To Itch.io</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" viewBox="0 0 256 256">
+                <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+            </svg>
+        </Link>
+        
+        <div className="HeadHunted-MyContributions-Container">
+            <h2>My Contributions</h2>
+            <ul>
+                <li>Designed and refined player movement for a responsive and satisfying feel using Unity’s Character Controller</li>
+                <li>Developed and fine-tuned advanced movement abilities, including a dynamic grapple hook and dash</li>
+                <li>Worked closely with game designers to enhance movement mechanics, ensuring fluidity and player engagement</li>
+                <li>Ensured smooth multiplayer synchronization by prioritizing essential data transmission while reducing bandwidth usage</li>
+                <li>Designed a health recovery system to enhance player engagement and reward strategic gameplay</li>
+                <li>Collaborated with environmental artists to refine map colliders, optimizing level design and improving the playable area</li>
+            </ul>
+        </div>
+
+        <div className="QSVideo" style={{paddingTop: "16px"}}>
+            <video controls width="100%" muted>
                 <source src={QSVideo} type="video/mp4"/>
                 {/* Fallback if video doesnt load */}
                 Your browser does not support video tag. 
