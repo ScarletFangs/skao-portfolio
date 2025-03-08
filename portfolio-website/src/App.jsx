@@ -22,7 +22,10 @@ const router = createBrowserRouter(
       <Route path='/HeadHunted' element={<HeadHuntedPage/>}/>
       <Route path='/QuickShot' element={<QuickShotPage/>}/>      
     </Route>
-  )
+  ),
+  {
+    basename:'/skao-portfolio/'
+  }
 )
 
 function App() {
