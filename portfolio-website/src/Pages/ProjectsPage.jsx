@@ -17,10 +17,10 @@ const ProjectsPage = () => {
             {/* Project 1 */}
             <ProjectCard
               className="ProjectPage-LargerCard"
-              imgSrc={HeadHuntedPhoto}
-              projectType="Virtual Reality"
-              projectTitle="HeadHunted"
-              pageLink="/HeadHunted"
+              imgSrc={DawnCorePhoto}
+              projectType="First Person Shooter"
+              projectTitle="DawnCore"
+              pageLink="/DawnCore"
             />
 
             {/* Project 2 */}
@@ -35,10 +35,10 @@ const ProjectsPage = () => {
             {/* Project 3 */}
             <ProjectCard
               className="ProjectPage-LargerCard"
-              imgSrc={DawnCorePhoto}
-              projectType="First Person Shooter"
-              projectTitle="DawnCore"
-              pageLink="/DawnCore"
+              imgSrc={HeadHuntedPhoto}
+              projectType="Virtual Reality"
+              projectTitle="HeadHunted"
+              pageLink="/HeadHunted"
             />
         </div>
       </div>
