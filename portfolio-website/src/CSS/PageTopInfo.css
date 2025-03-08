@@ -44,8 +44,8 @@
     flex-grow: 1;
     background-image: repeating-linear-gradient(
         to right,
-        #ffffff 0px,
-        #ffffff 5px,
+        white 0px,
+        white 5px,
         transparent 5px,
         transparent 10px
     );

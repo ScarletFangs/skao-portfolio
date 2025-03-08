@@ -82,6 +82,13 @@
 {
     word-break: break-word;
     word-wrap: break-word;
+    
+    /* mini heading */
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--Light60);
 }
 
 .HeadHunted-LinkBtn
@@ -95,21 +102,21 @@
     gap: 6px;
     padding: 12px 24px;
     border-radius: 12px;
-    border: 1px solid #999999;
+    border: 1px solid var(--Light60);
 
     /* For animation */
-    transition: color 0.5s ease;
+    transition: color ease;
 }
 
 .HeadHunted-LinkBtn svg
 {
-    transition: transform 0.5 ease;
+    transition: transform ease;
 }
 
 .HeadHunted-LinkBtn:hover
 {
-    color:#1A1A1A;
-    border: 1px solid #1A1A1A;
+    color:var(--Dark10);
+    border: 1px solid var(--Dark10);
 }
 
 .HeadHunted-LinkBtn:hover svg
@@ -120,7 +127,7 @@
 
 .HeadHunted-LinkBtn:hover p
 {
-    color: #4CE6A6;
+    color: var(--Green60);
     transform: scale(1.1);
 }
 
@@ -130,6 +137,7 @@
     padding-left: 1.4rem;
     width: auto;
 }
+
 
 @media (max-width: 809px)
 {

@@ -55,7 +55,7 @@
 
 .ProjectCard-Type
 {
-    color: #999999;
+    color: var(--Light60);
     text-transform: uppercase;
     font-size: 12px;
 }

@@ -1,6 +1,6 @@
 .active
 {
-    background-color: #1A1A1A;
+    background-color: var(--Dark10);
 }
 
 .navbar-container
@@ -12,13 +12,13 @@
     flex-wrap: nowrap;
     position: fixed;
     justify-content:flex-start;
-    background-color: #050505;
+    background-color: var(--Dark2);
     gap: 10px;
     width: 288px;
     height: 100vh;
     align-items: center;
     padding: 48px;
-    border-right: 2px #505050 solid;
+    border-right: 2px var(--Light60) solid;
 }
 
 .navbar-TopCluster
@@ -60,7 +60,7 @@
 {
   display: flex;
   box-sizing: border-box;
-  background-color: #050505;
+  background-color: var(--Dark2);
   width: 100%;
   
   padding: 6px;
@@ -72,7 +72,7 @@
 
 .navbar-links:hover
 {
-    background-color: #1A1A1A;
+    background-color: var(--Dark10);
     text-decoration: none;
 }
 
@@ -100,8 +100,8 @@
     flex-direction: column;
     /* justify-content: space-between; */
     align-items: center;
-    background-color: #050505;
-    border-bottom: 2px #505050 solid;
+    background-color: var(--Dark2);
+    border-bottom: 2px var(--Light60) solid;
     padding: 24px;
     z-index: 9999;
     height: 5%;
@@ -173,7 +173,6 @@
     .top-navbar-container
     {
         display: none;
-        position: none;
         top: 0;
     }
 }
