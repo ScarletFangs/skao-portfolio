@@ -1,7 +1,7 @@
 {
   "homepage": "http://scarletfangs.github.io/skao-portfolio",
   "name": "portfolio-website",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
