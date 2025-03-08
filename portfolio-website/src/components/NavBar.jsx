@@ -1,5 +1,8 @@
 import React, {useState } from 'react'
-import NavIcons from '../images.js'
+import HomeIcon from '../assets/NavIcons/house.svg'
+import ProfileIcon from '../assets/NavIcons/profile.svg'
+import ProjectIcon from '../assets/NavIcons/projects.svg'
+import SelfPic from '../assets/NavIcons/selfpic.jpg'
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
@@ -7,9 +10,9 @@ const NavBar = () => {
 
     // Scalable navigation vertical bar 
     const NavLinks = [
-        ["Home", NavIcons["HomeIcon"], "/"],
-        ["About", NavIcons["ProfileIcon"], "/about"], 
-        ["Projects", NavIcons["ProjectIcon"], "/projects"]
+        ["Home", HomeIcon, "/"],
+        ["About", ProfileIcon, "/about"], 
+        ["Projects", ProjectIcon, "/projects"]
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +24,7 @@ const NavBar = () => {
             {/* Self Picture div */}
             <nav className="navbar-TopCluster">
                 <Link to="/">  {/* to return people to home*/}
-                    <img src={NavIcons["SelfPic"]} alt="Picture of Sirena Kao"/>
+                    <img src={SelfPic} alt="Picture of Sirena Kao"/>
                 </Link>
 
                 {/* Navigation Buttons div */}
@@ -43,7 +46,7 @@ const NavBar = () => {
             <nav className="top-navbar-container-group">
                 {/* Self picture div */}
                 <Link to="/">
-                    <img src={NavIcons["SelfPic"]} alt="Picture of Sirena Kao"/>
+                    <img src={SelfPic} alt="Picture of Sirena Kao"/>
                 </Link>
                 
                 <Link to={null} onClick={() => { setMenuOpen(!menuOpen);}} aria-label="Menu Icon">
