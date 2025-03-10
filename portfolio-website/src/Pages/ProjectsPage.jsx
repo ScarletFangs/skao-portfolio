@@ -19,7 +19,7 @@ const ProjectsPage = () => {
               className="ProjectPage-LargerCard"
               imgSrc={DawnCorePhoto}
               projectType="First Person Shooter"
-              projectTitle="DawnCore"
+              projectTitle="DawnCore (Unreleased)"
               pageLink="/DawnCore"
             />
 

@@ -18,11 +18,12 @@ const HomePage = () => {
         <div className="Hero-ProjectCards">
           {/* Project 1 */}
           <ProjectCard
-            imgSrc={HeadHuntedPhoto}
-            projectType="Virtual Reality"
-            projectTitle="HeadHunted"
-            pageLink="/HeadHunted"
-          />
+              className="ProjectPage-LargerCard"
+              imgSrc={DawnCorePhoto}
+              projectType="First Person Shooter"
+              projectTitle="DawnCore (Unreleased)"
+              pageLink="/DawnCore"
+            />
 
           {/* Project 2 */}
           <ProjectCard

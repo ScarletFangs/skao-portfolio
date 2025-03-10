@@ -44,7 +44,7 @@ const HeadHunted = () => {
                     <div className="HeadHunted-QuickInfo-Label">
                         <p><strong className="Description-Label">Engine</strong>: Unity</p>
                         <p><strong className="Description-Label">Tools</strong>: GitHub, Photoshop</p>
-                        <p><strong className="Description-Label">Roles</strong>: Programmer, Producer</p>
+                        <p><strong className="Description-Label">Roles</strong>: Team Lead, Programmer</p>
                         <p><strong className="Description-Label">Duration</strong>: October 2023 - December 2023</p>
                         <p><strong className="Description-Label">Game</strong>: Horror virtual reality game raising awareness of environmental sustainability</p>
                         <p><strong className="Description-Label">Team Size</strong>: 6 Students</p>
