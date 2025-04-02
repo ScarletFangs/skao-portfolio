@@ -10,7 +10,7 @@ const ProjectsPage = () => {
     <>
       <div className="ProjectPage-Container">
         <PageTopInfo
-          pageTitle="Projects I Have Worked On"
+          PageTitle="Projects I Have Worked On"
         />
 
         <div className="ProjectPage-ProjectCards">

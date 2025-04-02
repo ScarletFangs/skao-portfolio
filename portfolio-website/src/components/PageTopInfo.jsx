@@ -1,17 +1,17 @@
 import React from 'react'
 
-const PageTopInfo = ({pageTitle, pageDescription, showLocation}) => {
+const PageTopInfo = ({PageTitle, PageDescription, ShowLocation}) => {
   return (
-    <header className="TopInfo-Container">
+    <header className="TopInfo-Container" style={{paddingBottom: ShowLocation ? "48px" : "0px"}}>
       <div className="TopInfo-TitleDescrip">
-        <h1>{pageTitle}</h1>
+        <h1>{PageTitle}</h1>
         {/* Conditionally render it for reusability across pages */}
-        {pageDescription && <h2 style={{paddingTop:'48px'}}>{pageDescription}</h2>}
+        {PageDescription && <h2 style={{paddingTop:'48px'}}>{PageDescription}</h2>}
       </div>
 
     {/* Divider for header */}
       <div className="TopInfo-LocationDivider">
-        {showLocation ?  (
+        {ShowLocation ?  (
           <>
             <div className="TopInfo-MiniGroup">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4CE6A6" viewBox="0 0 256 256" aria-label="Location Marker Icon">

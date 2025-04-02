@@ -7,9 +7,9 @@ const AboutPage = () => {
     <>
     <div className="About-Container">
       <PageTopInfo
-        pageTitle="Get To Know Me"
-        pageDescription= "Hello, I'm Sirena, and I am game engineer who loves working with combat systems. I have always been captivated by the engineering done behind the scenes for games to perform. My goal is to combine bring exhilarating and dynamic combat experiences to players in both first and third person point of views."
-        showLocation={true}
+        PageTitle="Get To Know Me"
+        PageDescription= "Hello, I'm Sirena, and I am game engineer who loves working with combat systems. I have always been captivated by the engineering done behind the scenes for games to perform. My goal is to combine bring exhilarating and dynamic combat experiences to players in both first and third person point of views."
+        ShowLocation={true}
       />
 
       <div className="About-EduContainer">

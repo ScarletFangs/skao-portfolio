@@ -9,7 +9,7 @@ import HomePage from './Pages/HomePage.jsx'
 import AboutPage from './Pages/AboutPage.jsx'
 import ProjectPage from './Pages/ProjectsPage.jsx'
 import DawnCorePage from './Pages/DawnCorePage.jsx'
-import HeadHuntedPage from './Pages/HeadHunted.jsx'
+import HeadHuntedPage from './Pages/HeadHuntedPage.jsx'
 import QuickShotPage from './Pages/QuickShotPage.jsx'
 
 const router = createBrowserRouter(

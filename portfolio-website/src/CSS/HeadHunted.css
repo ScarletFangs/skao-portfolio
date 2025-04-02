@@ -16,37 +16,6 @@
     width: 100%;
 }
 
-.HeadHunted-InfoBar
-{
-    display:flex;
-    width: 100%;
-    height: fit-content;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.HeadHunted-InfoBar-Divider
-{
-    border: none;
-    flex-grow: 1;
-    background-image: repeating-linear-gradient(
-        to right,
-        #ffffff 0px,
-        #ffffff 5px,
-        transparent 5px,
-        transparent 10px
-    );
-    height: 1px; /* Adjusts the height of the line */
-}
-
-.HeadHunted-InfoBar-MiniGroup
-{
-    display:flex;
-    align-items: center;
-    gap: .375rem;
-}
-
 .HeadHunted-QuickInfo-Container
 {
     display: flex;

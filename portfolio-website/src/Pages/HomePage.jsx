@@ -1,7 +1,7 @@
 import React from 'react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import PageTopInfo from '../components/PageTopInfo.jsx'
-import HeadHuntedPhoto from '../assets/ProjectImages/HeadHunted/headhunted.jpg' 
+import DawnCorePhoto from '../assets/ProjectImages/DawnCore/dawncore.jpg' 
 import QuickshotPhoto from '../assets/ProjectImages/Quickshot/quickshot.png'
 
 const HomePage = () => {
@@ -10,9 +10,9 @@ const HomePage = () => {
     <>
       <div className="Home-Container">
         <PageTopInfo
-          pageTitle="Hello Everyone! I'm Sirena."
-          pageDescription= "A passionate game engineer who loves to dive into how mechanics work behind the scenes."
-          showLocation={true}
+          PageTitle="Hello Everyone! I'm Sirena."
+          PageDescription= "A passionate game engineer who loves to dive into how mechanics work behind the scenes."
+          ShowLocation={true}
         />
 
         <div className="Hero-ProjectCards">
