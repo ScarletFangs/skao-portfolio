@@ -26,6 +26,11 @@
     padding-left: 20px;
 }
 
+.About-EduGrouping h6
+{
+    color: var(--Light60);
+}
+
 .About-ResumeContainer
 {
     display: flex;
