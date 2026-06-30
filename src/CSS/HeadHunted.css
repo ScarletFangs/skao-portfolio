@@ -100,13 +100,20 @@
     transform: scale(1.1);
 }
 
-.HeadHunted-MyContributions-Container ul
+/* All lists in the container (including DC-Movement-System, etc.) show bullets */
+.HeadHunted-Container ul
 {
-    margin-top: 32px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     padding-left: 1.4rem;
     width: auto;
     list-style-type: disc;
     list-style-position: outside;
+}
+
+.HeadHunted-MyContributions-Container ul
+{
+    margin-top: 32px;
 }
 
 
