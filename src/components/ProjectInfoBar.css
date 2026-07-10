@@ -28,3 +28,12 @@
     align-items: center;
     gap: .375rem;
 }
+
+@media (max-width: 809px)
+{
+    .InfoBar-Container
+    {
+        flex-wrap: wrap;
+        row-gap: .75rem;
+    }
+}
