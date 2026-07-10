@@ -1,0 +1,34 @@
+.ProjectPage-Container
+{
+    padding: 3rem 3rem 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 70vw;
+    margin: auto;
+    gap: 9px;
+}
+
+.ProjectPage-Container > img
+{
+    width: 100%;
+}
+
+.ProjectPage-Container ul
+{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-left: 1.4rem;
+    width: auto;
+    list-style-type: disc;
+    list-style-position: outside;
+}
+
+@media (max-width: 809px)
+{
+    .ProjectPage-Container
+    {
+        max-width: 100vw;
+    }
+}

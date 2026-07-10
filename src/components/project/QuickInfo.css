@@ -1,0 +1,58 @@
+.QuickInfo-Container
+{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: min-content;
+    width: 100%;
+    padding: 37px 0;
+    gap: 24px;
+    align-items: center;
+}
+
+.QuickInfo-Container img
+{
+    width: 50%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+}
+
+.QuickInfo-Description
+{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.QuickInfo-Facts p
+{
+    margin-top: .625rem;
+}
+
+.QuickInfo-FactLabel
+{
+    word-break: break-word;
+    word-wrap: break-word;
+
+    /* mini heading */
+    font-family: "Inter", serif;
+    font-weight: 1200;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--Light60);
+}
+
+@media (max-width: 809px)
+{
+    .QuickInfo-Container
+    {
+        flex-direction: column;
+    }
+
+    .QuickInfo-Container img
+    {
+        align-self: center;
+        min-width: 250px;
+    }
+}

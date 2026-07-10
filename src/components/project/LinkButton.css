@@ -1,0 +1,39 @@
+.LinkButton
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+    text-decoration: none;
+    gap: 6px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--Light60);
+
+    /* For animation */
+    transition: color ease;
+}
+
+.LinkButton svg
+{
+    transition: transform ease;
+}
+
+.LinkButton:hover
+{
+    color: var(--Dark10);
+    border: 1px solid var(--Dark10);
+}
+
+.LinkButton:hover svg
+{
+    /* move icon 5px right */
+    transform: translateX(5px);
+}
+
+.LinkButton:hover p
+{
+    color: var(--Green60);
+    transform: scale(1.1);
+}
