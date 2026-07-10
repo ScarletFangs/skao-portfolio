@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import PageTopInfo from '../components/PageTopInfo'
-import ProjectInfoBar from '../components/ProjectInfoBar'
-import DCPhoto1 from '../assets/ProjectImages/DawnCore/dawncore.jpg'
-import DCPhoto2 from '../assets/ProjectImages/DawnCore/DCsplash.png'
-import DCVideo from '../assets/ProjectImages/DawnCore/DCDemo.mp4'
-import DCVideo2 from '../assets/ProjectImages/DawnCore/WeaponDemo.mp4'
+import PageTopInfo from '../../components/PageTopInfo'
+import ProjectInfoBar from '../../components/ProjectInfoBar'
+import DCPhoto1 from '../../assets/ProjectImages/DawnCore/dawncore.jpg'
+import DCPhoto2 from '../../assets/ProjectImages/DawnCore/DCsplash.png'
+import DCVideo from '../../assets/ProjectImages/DawnCore/DCDemo.mp4'
+import DCVideo2 from '../../assets/ProjectImages/DawnCore/WeaponDemo.mp4'
 
 const DawnCorePage = () => {
   return (

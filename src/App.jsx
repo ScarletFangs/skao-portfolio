@@ -1,16 +1,16 @@
 import {
-  Route, 
-  createBrowserRouter, 
+  Route,
+  createBrowserRouter,
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout.jsx'
-import HomePage from './Pages/HomePage.jsx'
-import AboutPage from './Pages/AboutPage.jsx'
-import ProjectPage from './Pages/ProjectsPage.jsx'
-import DawnCorePage from './Pages/DawnCorePage.jsx'
-import HeadHuntedPage from './Pages/HeadHuntedPage.jsx'
-import QuickShotPage from './Pages/QuickShotPage.jsx'
+import HomePage from './pages/HomePage.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import ProjectPage from './pages/ProjectsPage.jsx'
+import DawnCorePage from './pages/projects/DawnCorePage.jsx'
+import HeadHuntedPage from './pages/projects/HeadHuntedPage.jsx'
+import QuickShotPage from './pages/projects/QuickShotPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

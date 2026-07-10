@@ -1,10 +1,9 @@
-import React from 'react'
-import PageTopInfo from '../components/PageTopInfo'
-import ProjectInfoBar from '../components/ProjectInfoBar'
+import PageTopInfo from '../../components/PageTopInfo'
+import ProjectInfoBar from '../../components/ProjectInfoBar'
 import { Link } from 'react-router-dom'
-import QSPhoto1 from '../assets/ProjectImages/Quickshot/quickshot.png'
-import QSPhoto2 from '../assets/ProjectImages/Quickshot/quickshot2.png'
-import QSVideo from '../assets/ProjectImages/Quickshot/QSDemo.mp4'
+import QSPhoto1 from '../../assets/ProjectImages/Quickshot/quickshot.png'
+import QSPhoto2 from '../../assets/ProjectImages/Quickshot/quickshot2.png'
+import QSVideo from '../../assets/ProjectImages/Quickshot/QSDemo.mp4'
 
 
 const QuickShotPage = () => {

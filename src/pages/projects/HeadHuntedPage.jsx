@@ -1,10 +1,9 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import PageTopInfo from '../components/PageTopInfo'
-import ProjectInfoBar from '../components/ProjectInfoBar'
-import HHSplashArt from '../assets/ProjectImages/HeadHunted/hh.jpg'
-import HHMoviePoster from '../assets/ProjectImages/HeadHunted/HH_Movie_Poster_2.png'
-import HHVideo from '../assets/ProjectImages/HeadHunted/startVideo.mp4'
+import PageTopInfo from '../../components/PageTopInfo'
+import ProjectInfoBar from '../../components/ProjectInfoBar'
+import HHSplashArt from '../../assets/ProjectImages/HeadHunted/hh.jpg'
+import HHMoviePoster from '../../assets/ProjectImages/HeadHunted/HH_Movie_Poster_2.png'
+import HHVideo from '../../assets/ProjectImages/HeadHunted/startVideo.mp4'
 
 const HeadHuntedPage = () => {
   return (
@@ -34,7 +33,7 @@ const HeadHuntedPage = () => {
                         <p><strong className="Description-Label">Team Size</strong>: 6 Students</p>
                     </div>
                     <p>
-                        Headhunted is a VR game prototype with a message of environmental sustainability. You are a deer lurking in the forest, running away from hunters while trying to rescue your friends in a cage! Look out, deforestation has made it different to run around the forest... Unfortunately, many deer haven't made it out alive.... can you? 
+                        Headhunted is a VR game prototype with a message of environmental sustainability. You are a deer lurking in the forest, running away from hunters while trying to rescue your friends in a cage! Look out, deforestation has made it different to run around the forest... Unfortunately, many deer haven&apos;t made it out alive.... can you?
                     </p>
                 </div>
 
