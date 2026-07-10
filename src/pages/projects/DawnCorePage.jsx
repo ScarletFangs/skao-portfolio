@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom'
-import PageTopInfo from '../../components/PageTopInfo'
 import ProjectInfoBar from '../../components/ProjectInfoBar'
+import ProjectPage from '../../components/project/ProjectPage'
+import QuickInfo from '../../components/project/QuickInfo'
+import Section from '../../components/project/Section'
+import VideoSection from '../../components/project/VideoSection'
+import LinkButton from '../../components/project/LinkButton'
 import DCPhoto1 from '../../assets/ProjectImages/DawnCore/dawncore.jpg'
 import DCPhoto2 from '../../assets/ProjectImages/DawnCore/DCsplash.png'
 import DCVideo from '../../assets/ProjectImages/DawnCore/DCDemo.mp4'
@@ -8,46 +11,33 @@ import DCVideo2 from '../../assets/ProjectImages/DawnCore/WeaponDemo.mp4'
 
 const DawnCorePage = () => {
   return (
-    <div className="HeadHunted-Container">
-      <PageTopInfo
-        PageTitle="DawnCore"
-        ShowLocation={false}
-      />
-
+    <ProjectPage title="DawnCore">
       <ProjectInfoBar
         ProjectType="School Project"
         Duration="21 Weeks"
         Genre="Single-Player First Person Shooter"
       />
 
-      <img src={DCPhoto1} />
+      <img src={DCPhoto1} alt="DawnCore key art"/>
 
-      <div className="HeadHunted-QuickInfo-Container">
-        <div className="HeadHunted-QuickInfo-Description">
-          <div className="HeadHunted-QuickInfo-Label">
-            <h6><strong className="Description-Label">Engine</strong>: Unreal Engine</h6>
-            <h6><strong className="Description-Label">Tools</strong>: Perforce, Miro, LucidCharts, Figma, Jira</h6>
-            <h6><strong className="Description-Label">Roles</strong>: Programmer</h6>
-            <h6><strong className="Description-Label">Duration</strong>: Sept 2024 - June 2025</h6>
-            <h6><strong className="Description-Label">Game</strong>: A single-player movement shooter where you fight against hordes of enemies with dynamic movement. Your goal is to survive to reach the end of the map.</h6>
-            <h6><strong className="Description-Label">Team Size</strong>: 17 Students</h6>
-          </div>
-          <p>
-            DawnCore is a single-player movement shooter where you fight against hordes of Shadow monsters with the versatile movement from Titanfall. You are armed with a powerful pistol as well as a sabre to cut down the Darkness.
-          </p>
-        </div>
+      <QuickInfo
+        image={DCPhoto2}
+        imageAlt="DawnCore splash screen"
+        facts={{
+          'Engine': 'Unreal Engine',
+          'Tools': 'Perforce, Miro, LucidCharts, Figma, Jira',
+          'Roles': 'Programmer',
+          'Duration': 'Sept 2024 - June 2025',
+          'Game': 'A single-player movement shooter where you fight against hordes of enemies with dynamic movement. Your goal is to survive to reach the end of the map.',
+          'Team Size': '17 Students',
+        }}
+      >
+        DawnCore is a single-player movement shooter where you fight against hordes of Shadow monsters with the versatile movement from Titanfall. You are armed with a powerful pistol as well as a sabre to cut down the Darkness.
+      </QuickInfo>
 
-        <img src={DCPhoto2} />
-      </div>
+      <LinkButton href="https://bronpro.itch.io/dawncore">To Itch.io</LinkButton>
 
-      <Link to="https://bronpro.itch.io/dawncore" target="_blank" className="HeadHunted-LinkBtn">
-        <p>To Itch.io</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" viewBox="0 0 256 256">
-          <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-        </svg>
-      </Link>
-
-      {/* 
+      {/*
         Reorganization from here:
         - Problem game tries to solve (maybe put goal of game here)
         - System name
@@ -61,18 +51,19 @@ const DawnCorePage = () => {
         - What you would do differently
       */}
       {/* TODO - stylize */}
-      <div className="DC-Movement-System"> 
-        <h2>Goal</h2>
+      <Section title="Goal">
         <p>Design a high velocity traversal system inspired by Titanfall 2 where momentum conservation is the core skill expression. Movement states (sprint, slide, wall run, air) should blend seamlessly while avoiding motion discomfort during rapid directional changes.</p>
+      </Section>
 
-        <h2>Challenges</h2>
+      <Section title="Challenges">
         <ul>
             <li>Players frequently lost speed when transitioning between sprinting, sliding, and wall-running</li>
             <li>Camera snapping to different states caused motion discomfort during extended play</li>
             <li>Movement transitions felt abrupt, making traversal feel predetermined instead of fluid</li>
         </ul>
+      </Section>
 
-        <h2>Implementation</h2>
+      <Section title="Implementation">
         <ul>
             <li><b>Controller Augmentation</b> - Extended the engine character controller by injecting custom directional velocity and surface adhesion logic during wall running</li>
             <li><b>Momentum Redirection</b> - Redirected the player&apos;s existing movement vector along wall surfaces instead of resetting speed on impact</li>
@@ -80,12 +71,9 @@ const DawnCorePage = () => {
             <li><b>Camera Smoothing</b> - Interpolated camera orientation relative to the wall surface to avoid sudden view snaps during traversal</li>
             <li><b>Aerial Control Separation</b> - decomposed player input into directional influence without canceling accumulated forward momentum (movement behavior was driven by vector based calculations rather than simple speed adjustments)</li>
         </ul>
+      </Section>
 
-      </div>
-
-
-      <div className="HeadHunted-MyContributions-Container">
-        <h2>My Contributions</h2>
+      <Section title="My Contributions">
         <ul>
           <li>Developed a movement system that smoothly transitions between modes while maintaining player momentum using linear algebra</li>
           <li>Collaborated with game designers to ensure fluidity between movement mechanics and maintain satisfying feeling</li>
@@ -93,33 +81,15 @@ const DawnCorePage = () => {
           <li>Collaborated with UI/UX members to implement user interfaces that enhances gameplay</li>
           <li>Collaborated with 3D model artist and animators to ensure proper assets are being created for the player</li>
         </ul>
-        <div className="HHVideo" style={{ paddingTop: "16px" }}>
-          <video controls width="100%" muted>
-            <source src={DCVideo} type="video/mp4" />
-            {/* Fallback if video doesnt load */}
-            Your browser does not support video tag.
-          </video>
-        </div>
-      </div>
+        <VideoSection src={DCVideo}/>
+      </Section>
 
-      <div className="HeadHunted-MyContributions-Container">
-        <h2>Weapon Prototype</h2>
-        <div className="HHVideo" style={{ paddingTop: "16px" }}>
-          <video controls width="100%" muted>
-            <source src={DCVideo2} type="video/mp4" />
-            {/* Fallback if video doesnt load */}
-            Your browser does not support video tag.
-          </video>
-        </div>
-      </div>
+      <Section title="Weapon Prototype">
+        <VideoSection src={DCVideo2}/>
+      </Section>
 
-      <Link to="https://bronpro.itch.io/dawncore" target="_blank" className="HeadHunted-LinkBtn">
-        <p>To Itch.io</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" viewBox="0 0 256 256">
-          <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-        </svg>
-      </Link>
-    </div>
+      <LinkButton href="https://bronpro.itch.io/dawncore">To Itch.io</LinkButton>
+    </ProjectPage>
   )
 }
 
