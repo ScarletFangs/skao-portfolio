@@ -1,12 +1,23 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root
 {
-  --Dark2: #050505;
-  --Dark10: #1A1A1A;
-  --Light60: #999999;
-  --Light90: #E6E6E6;
-  --Green60: #4CE6A6;
-  --Green10: #062D1D;
-  --Red70: #EC7979;
+  font-family: Inter;
+  line-height: 1.4;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body
@@ -17,7 +28,6 @@ body
   font-style: normal;
   font-size: 16px;
   color: var(--Light60);
-  /* margin: 0px; */
 }
 
 h1

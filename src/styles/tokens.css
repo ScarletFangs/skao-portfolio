@@ -1,0 +1,18 @@
+/*
+ * Design tokens.
+ *
+ * Canonical responsive breakpoint: phone = (max-width: 809px),
+ * sidebar layout = (min-width: 810px). CSS custom properties cannot
+ * be used inside @media conditions, so every media query in the
+ * codebase must use these exact values.
+ */
+:root
+{
+  --Dark2: #050505;
+  --Dark10: #1A1A1A;
+  --Light60: #999999;
+  --Light90: #E6E6E6;
+  --Green60: #4CE6A6;
+  --Green10: #062D1D;
+  --Red70: #EC7979;
+}
