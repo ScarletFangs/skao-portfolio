@@ -16,7 +16,7 @@ npm run lint       # ESLint
 npm run deploy     # Build + publish dist/ to GitHub Pages via gh-pages
 ```
 
-There are no tests in this project.
+There are no tests in this project. Verification is `npm run lint` + `npm run build` + checking pages in the dev server. The site must be opened at the `/skao-portfolio/` path (e.g. `http://localhost:3000/skao-portfolio/`) — the bare root won't match the router basename.
 
 ## Architecture
 
@@ -31,24 +31,46 @@ Deep links on GitHub Pages work via a redirect trick: `public/404.html` rewrites
 
 The `_redirects` file (copied into `dist/` by `vite-plugin-static-copy`) is a Netlify-style SPA fallback; leave it alone.
 
-### Page structure
+### Layout and breakpoints
 
-- `src/App.jsx` — all routes, one per page
-- `src/layouts/MainLayout.jsx` — wraps every page: `NavBar` + a fixed 288px spacer (desktop/tablet) + `<Outlet/>`. Responsive behavior uses `react-responsive` `useMediaQuery` with three breakpoints: phone ≤809px, tablet 810–1199px, desktop ≥1200px. These same breakpoints are used in components — keep them consistent.
-- `src/Pages/` — one component per page. Project pages (DawnCore, HeadHunted, QuickShot) share a common shape: `PageTopInfo` → `ProjectInfoBar` → images/videos/description sections → external link button.
-- `src/components/` — shared pieces (`NavBar`, `PageTopInfo`, `ProjectInfoBar`, `ProjectCard`)
-- `src/CSS/` — plain CSS files. Many class names are prefixed `HeadHunted-*` (from the first project page built) but are reused across all project pages; don't rename them for one page without checking the others.
-- `src/assets/ProjectImages/<ProjectName>/` — images and demo videos, imported directly into JSX so Vite bundles them
+`src/layouts/MainLayout.jsx` wraps every page: a CSS grid (`MainLayout.css`) with a sticky 288px sidebar column and a content column. Responsive behavior is pure CSS — no JavaScript participates in layout.
+
+**Canonical breakpoint:** phone = `(max-width: 809px)`, sidebar layout = `(min-width: 810px)`. Every media query in the codebase uses exactly these two values; CSS custom properties can't be used in `@media` conditions, so keep them literal and consistent. At phone width the sidebar is hidden and a sticky top navbar (with hamburger menu) shows instead — `NavBar.jsx` renders both variants as siblings and CSS displays exactly one.
+
+Percentage heights that were harmless under the old block layout can misbehave as grid items (this caused a mobile navbar bug once) — size grid children with content or explicit units.
+
+### Styling
+
+- `src/styles/tokens.css` — design-token custom properties (`--Dark2`, `--Light60`, `--Green60`, …). Use these instead of hex values.
+- `src/styles/global.css` — reset, body, and h1–h6/p element styles.
+- Only those two files are imported in `src/main.jsx`. Every other stylesheet is colocated next to the component or page that owns it and imported by that file (`NavBar.jsx` imports `./NavBar.css`).
+- Class names are prefixed with their component name (`QuickInfo-Container`, `Section-Container`). Note the distinction: `ProjectsPage-*` is the projects *listing* page; `ProjectPage-*` is the shared project *detail* wrapper.
+
+Tailwind and MUI were removed from this project; styling is plain CSS only.
+
+### Project detail pages
+
+Project pages (`src/pages/projects/`) are compositions of the shared section components in `src/components/project/`:
+
+- `ProjectPage({ title, children })` — page wrapper, renders `PageTopInfo` + container
+- `QuickInfo({ facts, image, imageAlt, children })` — `facts` is a `{ label: value }` object; children is the description text
+- `Section({ title, children })`
+- `VideoSection({ src })`
+- `LinkButton({ href, children })` — external link, opens in new tab
+
+plus the existing `ProjectInfoBar({ ProjectType, Duration, Genre })`. Don't reintroduce page-specific layout CSS on project pages — extend the shared components instead.
 
 ### Adding a new project
 
-1. Add assets under `src/assets/ProjectImages/<ProjectName>/`
-2. Create `src/Pages/<ProjectName>Page.jsx` following an existing project page (DawnCorePage is the most developed)
+1. Add assets under `src/assets/ProjectImages/<ProjectName>/` (imported directly into JSX so Vite bundles them)
+2. Create `src/pages/projects/<ProjectName>Page.jsx` composing the section components (DawnCorePage is the most developed example)
 3. Register the route in `src/App.jsx`
-4. Add a `ProjectCard` entry in `src/Pages/ProjectsPage.jsx`
+4. Add a `ProjectCard` entry in `src/pages/ProjectsPage.jsx` (and optionally `src/pages/HomePage.jsx`)
+
+### Design docs
+
+`docs/superpowers/specs/` and `docs/superpowers/plans/` contain the design spec and implementation plan for the 2026-07 structure refactor — useful history for why the architecture looks the way it does.
 
 ## Conventions
 
-This repo predates the global engineering preferences and intentionally differs from them: it uses JavaScript (not TypeScript), default exports, and inline styles mixed with plain CSS. Match the existing style; don't convert files to TypeScript or named exports unless asked.
-
-Tailwind 4 and MUI are installed as dependencies, but the styling in practice is custom CSS in `src/CSS/` plus inline styles — follow whichever the surrounding code uses.
+This repo predates the global engineering preferences and intentionally differs from them: it uses JavaScript (not TypeScript) and default exports. Match the existing style; don't convert files to TypeScript or named exports unless asked.
