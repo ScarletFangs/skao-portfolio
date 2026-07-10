@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import { useState } from 'react'
 import HomeIcon from '../assets/NavIcons/house.svg'
 import ProfileIcon from '../assets/NavIcons/profile.svg'
 import ProjectIcon from '../assets/NavIcons/projects.svg'
@@ -57,7 +57,7 @@ const NavBar = () => {
             </nav>
 
             {/* Top bar style navigation */}
-            <nav className={menuOpen ? "" : "open"}>
+            <nav className={menuOpen ? "NavBar-MobileMenu is-open" : "NavBar-MobileMenu"}>
                 {NavLinks.map((item, index) => (
                     <NavLink to={item[2]} className="navbar-links-grouping" key={index}>
                         <div className="navbar-links">

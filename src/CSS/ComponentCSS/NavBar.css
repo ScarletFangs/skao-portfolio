@@ -10,7 +10,8 @@
     flex-direction: column;
     flex-grow: 1;
     flex-wrap: nowrap;
-    position: fixed;
+    position: sticky;
+    top: 0;
     justify-content:flex-start;
     background-color: var(--Dark2);
     gap: 10px;
@@ -115,9 +116,16 @@
     width: 100%;
 }
 
-.open
+.NavBar-MobileMenu
 {
     display: none;
+}
+
+.NavBar-MobileMenu.is-open
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     gap: 6px;
 }
 
@@ -158,12 +166,7 @@
     align-items: center;
 }
 
-.open
-{
-    position: sticky;
-}
-
-@media ((min-width: 811px))
+@media (min-width: 810px)
 {
     .navbar-container
     {
@@ -177,7 +180,7 @@
     }
 }
 
-@media (max-width: 810px)
+@media (max-width: 809px)
 {
     .navbar-container
     {

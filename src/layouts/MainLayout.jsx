@@ -1,15 +1,13 @@
-import { React, useEffect} from 'react'
+import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import MediaQuery, { useMediaQuery } from 'react-responsive'
 import NavBar from '../components/NavBar'
+import './MainLayout.css'
 
 const MainLayout = () => {
-  const isDesktop = useMediaQuery({query: '(min-width: 1200px)'})
-  const isTablet = useMediaQuery({query: '(min-width: 810px) and (max-width: 1199px)'})
-  const isPhone = useMediaQuery({query: '(max-width: 809px)'})
-
   const navigate = useNavigate();
 
+  // GitHub Pages deep-link support: public/404.html redirects unknown
+  // paths to /?redirect=<path>, which we resolve here.
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const redirectPath = searchParams.get('redirect');
@@ -19,24 +17,12 @@ const MainLayout = () => {
   }, [navigate]);
 
   return (
-    <>
-      <div className="MainLayout-Container" style={{
-        display: "flex",
-        flexDirection: isPhone ? "column" : "row"
-        }}>
-        <NavBar/>
-        {!isPhone && (
-            <div style={{
-              flexShrink:"0",
-              width: "288px", 
-              backgroundColor: "red"
-            }}></div> 
-        )}
-        <div className="MainLayout-Content" style={{marginBottom: "2%"}}>
-          <Outlet />
-        </div>
-      </div>
-    </>
+    <div className="MainLayout-Container">
+      <NavBar/>
+      <main className="MainLayout-Content">
+        <Outlet />
+      </main>
+    </div>
   )
 }
 
