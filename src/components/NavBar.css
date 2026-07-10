@@ -104,6 +104,7 @@
     background-color: var(--Dark2);
     border-bottom: 2px var(--Light60) solid;
     padding: 24px;
+    gap: 24px;
     z-index: 9999;
     width: 100%;
 }
