@@ -1,4 +1,4 @@
-import React from 'react'
+import './ProjectInfoBar.css'
 
 const ProjectInfoBar = ({ProjectType, Duration, Genre}) => {
   return (

@@ -1,7 +1,6 @@
-.ProjectPage-Container
+.Home-Container
 {
-    margin: 3%;
-    padding: 0;
+    margin: 3rem;
     box-sizing: border-box;
 
     display: flex;
@@ -9,14 +8,20 @@
     gap: 50px;
 }
 
-.ProjectPage-ProjectCards
+.Hero-ProjectCards
 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap:wrap;
 }
 
-
+@media (max-width: 809px)
+{
+    .Home-Container
+    {
+        margin: 3rem;
+    }
+}

@@ -1,8 +1,8 @@
-import React from 'react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import PageTopInfo from '../components/PageTopInfo.jsx'
-import DawnCorePhoto from '../assets/ProjectImages/DawnCore/dawncore.jpg' 
+import DawnCorePhoto from '../assets/ProjectImages/DawnCore/dawncore.jpg'
 import QuickshotPhoto from '../assets/ProjectImages/Quickshot/quickshot.png'
+import './HomePage.css'
 
 const HomePage = () => {
   

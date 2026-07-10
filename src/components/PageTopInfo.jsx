@@ -1,4 +1,4 @@
-import React from 'react'
+import './PageTopInfo.css'
 
 const PageTopInfo = ({PageTitle, PageDescription, ShowLocation}) => {
   return (

@@ -1,6 +1,6 @@
-import React from 'react'
 import Resume from '../assets/SKao_Resume.pdf'
 import PageTopInfo from '../components/PageTopInfo'
+import './AboutPage.css'
 
 const AboutPage = () => {
   return (
@@ -17,7 +17,7 @@ const AboutPage = () => {
           Education
         </h2>
         <div className="About-EduGrouping">
-          <h3> Bachelor's Degree in Game Design and Interactive Media</h3>
+          <h3> Bachelor&apos;s Degree in Game Design and Interactive Media</h3>
           <h6> Minor in Information and Computer Science </h6>
           <p>
             University of California, 2025

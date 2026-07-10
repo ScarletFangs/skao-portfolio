@@ -5,6 +5,7 @@ import ProjectIcon from '../assets/NavIcons/projects.svg'
 import SelfPic from '../assets/NavIcons/selfpic.jpg'
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import './NavBar.css'
 
 const NavBar = () => {
 
