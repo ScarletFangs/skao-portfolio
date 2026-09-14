@@ -25,7 +25,8 @@ const DawnCorePage = () => {
         imageAlt="DawnCore splash screen"
         facts={{
           'Engine': 'Unreal Engine',
-          'Tools': 'Perforce, Miro, LucidCharts, Figma, Jira',
+          'My Tools': 'Perforce, Miro, LucidCharts, Jira',
+          'Team Tools': 'Figma',
           'Roles': 'Programmer',
           'Duration': 'Sept 2024 - June 2025',
           'Game': 'A single-player movement shooter where you fight against hordes of enemies with dynamic movement. Your goal is to survive to reach the end of the map.',
@@ -37,55 +38,61 @@ const DawnCorePage = () => {
 
       <LinkButton href="https://bronpro.itch.io/dawncore">To Itch.io</LinkButton>
 
-      {/*
-        Reorganization from here:
-        - Problem game tries to solve (maybe put goal of game here)
-        - System name
-            - Challenges
-            - Implementation
-            - Iterations
-            - Lessons
-            - video / images if any
-        - Tools or designer-facing architecture
-        - Collaboration
-        - What you would do differently
-      */}
-      {/* TODO - stylize */}
       <Section title="Goal">
-        <p>Design a high velocity traversal system inspired by Titanfall 2 where momentum conservation is the core skill expression. Movement states (sprint, slide, wall run, air) should blend seamlessly while avoiding motion discomfort during rapid directional changes.</p>
+        <p>DawnCore is a movement shooter, so traversal is the game. The target was momentum conservation as the core skill expression. Sprinting into a slide into a wall run should read as one continuous motion instead of a sequence of separate states. I built and owned that system.</p>
       </Section>
 
-      <Section title="Challenges">
+      <Section title="Finding the Problem">
+        <p>I had the math working early and the system still felt wrong. To work out why, I watched playtest footage slowed down and studied how Titanfall 2 and Apex Legends solved the same traversal problem. Two problems came out of that, and neither one had shown up while I was testing calmly on my own.</p>
         <ul>
-            <li>Players frequently lost speed when transitioning between sprinting, sliding, and wall-running</li>
-            <li>Camera snapping to different states caused motion discomfort during extended play</li>
-            <li>Movement transitions felt abrupt, making traversal feel predetermined instead of fluid</li>
+            <li>Players lost speed moving between sprinting, sliding, and wall running, which made traversal feel predetermined instead of fluid</li>
+            <li>The camera snapped as the movement state changed. Once players were moving and shooting at the same time, that snap caused real physical discomfort over a long session</li>
         </ul>
       </Section>
 
       <Section title="Implementation">
         <ul>
+            <li><b>Momentum Redirection</b> - Maintained the player&apos;s existing movement vector based on the state they were transitioning from, instead of setting or increasing speed to compensate for the change</li>
+            <li><b>Camera Smoothing</b> - Interpolated camera orientation relative to the wall surface. This removed the view snaps and added some juice to how players landed on a wall</li>
             <li><b>Controller Augmentation</b> - Extended the engine character controller by injecting custom directional velocity and surface adhesion logic during wall running</li>
-            <li><b>Momentum Redirection</b> - Redirected the player&apos;s existing movement vector along wall surfaces instead of resetting speed on impact</li>
-            <li><b>Surface Validation</b> - sampled wall angles using surface normals to prevent attachment to geometry that would break movement flow</li>
-            <li><b>Camera Smoothing</b> - Interpolated camera orientation relative to the wall surface to avoid sudden view snaps during traversal</li>
-            <li><b>Aerial Control Separation</b> - decomposed player input into directional influence without canceling accumulated forward momentum (movement behavior was driven by vector based calculations rather than simple speed adjustments)</li>
-        </ul>
-      </Section>
-
-      <Section title="My Contributions">
-        <ul>
-          <li>Developed a movement system that smoothly transitions between modes while maintaining player momentum using linear algebra</li>
-          <li>Collaborated with game designers to ensure fluidity between movement mechanics and maintain satisfying feeling</li>
-          <li>Designed and implemented the pistol and saber weapons in game drawing inspiration from Left for Dead 2</li>
-          <li>Collaborated with UI/UX members to implement user interfaces that enhances gameplay</li>
-          <li>Collaborated with 3D model artist and animators to ensure proper assets are being created for the player</li>
+            <li><b>Surface Validation</b> - Sampled wall angles using surface normals to prevent attachment to geometry that would break movement flow</li>
+            <li><b>Aerial Control Separation</b> - Decomposed player input into directional influence without canceling accumulated forward momentum (movement behavior was driven by vector based calculations rather than simple speed adjustments)</li>
         </ul>
         <VideoSection src={DCVideo}/>
       </Section>
 
+      <Section title="Iterations">
+        <p>Most of the remaining time went into tuning rather than building. The first version was calibrated to what I could do with the system, which turned out to be the wrong target. Watching other people play is what set the real one.</p>
+        <p>The movement had to be forgiving enough that the least experienced player could still perform it without feeling overwhelmed, and demanding enough that a skilled player could chain complex traversals to their advantage. Finding where that line sits was never something I could work out at my desk.</p>
+      </Section>
+
+      <Section title="Collaboration">
+        <p>Because the whole point was preserving momentum, I worked with the game designers on where the speed ceiling should sit. Players were trying to move as fast as they could while still shooting at hordes of enemies, and those two goals pull against each other. Setting that number was a design call, so I worked it out with the designers instead of picking it on my own.</p>
+        <ul>
+          <li>Implemented in-game user interfaces with the UI/UX designers</li>
+          <li>Worked with the 3D modelers and animators so player assets matched what the movement system needed</li>
+          <li>Mapped movement states and system flow in Miro and LucidCharts before building them, and tracked work in Jira across Agile sprints</li>
+        </ul>
+      </Section>
+
       <Section title="Weapon Prototype">
+        <p>I also designed and implemented the pistol and sabre, taking inspiration from Left 4 Dead 2.</p>
         <VideoSection src={DCVideo2}/>
+      </Section>
+
+      <Section title="Lessons">
+        <p>Testing a system myself and watching someone else play it are two completely different scenarios, and only the second one told me what to change. The camera snap never showed up in my own testing because I was never moving and shooting at the same time while I tested.</p>
+        <p>That is the reason I want to be in the position where I can watch someone play, notice the change in their behavior that shows when they stopped enjoying it, and go find out why.</p>
+      </Section>
+
+      <Section title="What I Would Do Differently">
+        <p>The traversal system got where it needed to go. Most of what I would change is about how long it took me to find out what was wrong.</p>
+        <ul>
+          <li>I was diagnosing a feel problem by eye. Before tuning anything, I would build a live readout of speed and movement state so I could see what the system was doing while I was playing it, instead of working it out from slowed footage afterward.</li>
+          <li>Most of my testing happened once the system already felt finished, which is the point where changing it costs the most. I would spend less effort testing a build I considered done and more of it while the system was still rough, when feedback can still change the design and not just the numbers.</li>
+          <li>Playtests happened on the project schedule, so feedback on the movement arrived when the calendar said it would rather than when I needed it. I would put rough builds in front of teammates between those dates instead of waiting for the next scheduled session.</li>
+          <li>Designers could adjust the movement values I had thought to expose. The ones I had not predicted, like a small boost coming out of a slide into a jump, still had to come through me as a code change. I would build the tuning surface expecting designers to want things I did not anticipate.</li>
+        </ul>
       </Section>
 
       <LinkButton href="https://bronpro.itch.io/dawncore">To Itch.io</LinkButton>
