@@ -24,10 +24,10 @@ const DawnCorePage = () => {
         image={DCPhoto2}
         imageAlt="DawnCore splash screen"
         facts={{
-          'Engine': 'Unreal Engine',
+          'Engine': 'Unreal Engine (Blueprints, C++)',
           'My Tools': 'Perforce, Miro, LucidCharts, Jira',
           'Team Tools': 'Figma',
-          'Roles': 'Programmer',
+          'Roles': 'Gameplay Programmer',
           'Duration': 'Sept 2024 - June 2025',
           'Game': 'A single-player movement shooter where you fight against hordes of enemies with dynamic movement. Your goal is to survive to reach the end of the map.',
           'Team Size': '17 Students',
@@ -39,7 +39,7 @@ const DawnCorePage = () => {
       <LinkButton href="https://bronpro.itch.io/dawncore">To Itch.io</LinkButton>
 
       <Section title="Goal">
-        <p>DawnCore is a movement shooter, so traversal is the game. The target was momentum conservation as the core skill expression. Sprinting into a slide into a wall run should read as one continuous motion instead of a sequence of separate states. I built and owned that system.</p>
+        <p>DawnCore is a movement shooter, so traversal is the game. The target was momentum conservation as the core skill expression. Sprinting into a slide into a wall run should read as one continuous motion instead of a sequence of separate states. I was the gameplay programmer for the traversal system.</p>
       </Section>
 
       <Section title="Finding the Problem">
@@ -51,10 +51,12 @@ const DawnCorePage = () => {
       </Section>
 
       <Section title="Implementation">
+        <p>I prototyped the movement in Blueprints so I could answer the feel questions quickly, then converted the system to C++ once the behavior was settled, for efficiency and scalability. I structured movement and weapons as modular C++ components, so designers could retune behavior through Blueprints without touching code and a new movement style could extend a shared base instead of being written from scratch.</p>
+        <p>The choices below came out of what I saw in the playtests, so each one is paired with the player behavior it was fixing.</p>
         <ul>
-            <li><b>Momentum Redirection</b> - Maintained the player&apos;s existing movement vector based on the state they were transitioning from, instead of setting or increasing speed to compensate for the change</li>
-            <li><b>Camera Smoothing</b> - Interpolated camera orientation relative to the wall surface. This removed the view snaps and added some juice to how players landed on a wall</li>
-            <li><b>Controller Augmentation</b> - Extended the engine character controller by injecting custom directional velocity and surface adhesion logic during wall running</li>
+            <li><b>Momentum Redirection</b> - Maintained the player&apos;s existing movement vector based on the state they were transitioning from, instead of setting or increasing speed to compensate for the change. This is what kept sprinting, sliding, and wall running reading as one motion instead of three separate states</li>
+            <li><b>Camera Smoothing</b> - Interpolated camera orientation relative to the wall surface. This removed the view snaps that were causing physical discomfort once players were moving and shooting at the same time, and added some juice to how players landed on a wall</li>
+            <li><b>Character Extension</b> - Extended Unreal&apos;s Character class, injecting custom directional velocity and surface adhesion logic during wall running</li>
             <li><b>Surface Validation</b> - Sampled wall angles using surface normals to prevent attachment to geometry that would break movement flow</li>
             <li><b>Aerial Control Separation</b> - Decomposed player input into directional influence without canceling accumulated forward momentum (movement behavior was driven by vector based calculations rather than simple speed adjustments)</li>
         </ul>
@@ -62,7 +64,8 @@ const DawnCorePage = () => {
       </Section>
 
       <Section title="Iterations">
-        <p>Most of the remaining time went into tuning rather than building. The first version was calibrated to what I could do with the system, which turned out to be the wrong target. Watching other people play is what set the real one.</p>
+        <p>Once the core movement was working, the rest of my work on it was fine tuning rather than building. I was adding juice, smoothing the momentum transfer between states and refactoring the camera so every movement system called one camera object instead of its own. I was refining the weapons at the same time and helping the artists get their models and animations into the game. I was getting pulled to help in other places while trying to get through my own tasks.</p>
+        <p>I had calibrated the first version to what I thought was good. I did not have Titanfall 2, so I could not feel the wall running for myself. I worked from YouTube videos and from Apex Legends where there was an equivalent move. Once other people started playing, I had to widen the timing windows and account for movement I had not planned for. Wall riding needed to keep working when the wall curved, and when the surface had dips and bumps in it.</p>
         <p>The movement had to be forgiving enough that the least experienced player could still perform it without feeling overwhelmed, and demanding enough that a skilled player could chain complex traversals to their advantage. Finding where that line sits was never something I could work out at my desk.</p>
       </Section>
 
@@ -70,13 +73,15 @@ const DawnCorePage = () => {
         <p>Because the whole point was preserving momentum, I worked with the game designers on where the speed ceiling should sit. Players were trying to move as fast as they could while still shooting at hordes of enemies, and those two goals pull against each other. Setting that number was a design call, so I worked it out with the designers instead of picking it on my own.</p>
         <ul>
           <li>Implemented in-game user interfaces with the UI/UX designers</li>
+          <li>Partnered with the level designers to shape playable spaces around what the movement system could do, tuning layout scale, traversal routes, and encounter spacing against player momentum and speed</li>
           <li>Worked with the 3D modelers and animators so player assets matched what the movement system needed</li>
+          <li>Managed Perforce version control for the 17 person team</li>
           <li>Mapped movement states and system flow in Miro and LucidCharts before building them, and tracked work in Jira across Agile sprints</li>
         </ul>
       </Section>
 
       <Section title="Weapon Prototype">
-        <p>I also designed and implemented the pistol and sabre, taking inspiration from Left 4 Dead 2.</p>
+        <p>I also designed and implemented the pistol and sabre in Unreal Engine C++, built on the same component pattern as the movement system, taking inspiration from Left 4 Dead 2.</p>
         <VideoSection src={DCVideo2}/>
       </Section>
 
